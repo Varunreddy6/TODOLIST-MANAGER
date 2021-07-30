@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Flask Web App</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1> Update Task </h1>
+
+    <form action="/update/{{task.id}}" , method="POST">
+        Click <button><a href="/" class="button"></a>Back</button> to go back to Home page
+        <h2>Enter New Name</h2> 
+        <input type="text" name="content" , id="content" , value="{{task.content}} " placeholder="Enter New Name" style="width: 200px">
+        <h3>Enter New Deadline</h3>
+        <input type="date" name="deadline" id="deadline">
+        
+        <input type="submit" value="Update"  button type="button" class="btn btn-success"></bu>
+    </form>
+
+</div>
+{% endblock %}

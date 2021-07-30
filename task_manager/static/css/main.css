@@ -1,0 +1,70 @@
+html {
+    margin: 0;
+    font-family: sans-serif;
+    
+}
+
+body {
+    background-color:rgb(219, 233, 21);
+    background-repeat: no-repeat;
+    background-position:center;
+    
+    font-family:"Times New Roman"
+   
+    text-align: left;
+    
+}
+
+
+.content {
+    text-align: center;
+    margin: 0 auto;
+    width: 500px;
+    
+    
+    
+}
+
+table, td, th {
+    border: 1px solid #ffffff;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    height: 30px;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+#content {
+    margin-top: 5px;
+    width: 83%;
+}
+
+input {
+    border: 1 px solid blue;
+    
+}
+
+#deadline
+{
+    color: #999;
+}
+
+#button1 ,#button2
+{
+    
+    display:inline-block;
+    width:100px;
+}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Flask Web App</title>
+
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1> Task manager </h1>
+    <br>
+    <h4>Common, Let's Create Some Tasks</h4>
+
+    <form action="/" , method="POST">
+        <input type="text" name="content"  id="content" style="width: 200px;" placeholder="Enter the Task name" >
+        <br>
+        <input type="date" name="deadline" id="deadline">
+        <input value="Add Task"  button type="button" class="btn btn-primary"></bu>
+    </form>
+
+    
+   
+    <br>
+    <table class="table table-hover">
+        <tbody>
+        <tr>
+            <th>Task</th>
+            <th>Added on</th>
+            <th>Action</th>
+            <th>Due Date</th>
+            <th>Status</th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+            <td>{{task.content}}</td>
+            <td>{{task.time_stamp.date()}}</td>
+            {% if task.status!="finished" %}
+            <td>
+                <span><a href="/finish/{{task.id}}" button type="button" class="btn btn-success">Finish</a> <a href="/update/{{task.id}}" button type="button" class="btn btn-info">Edit</a></span>
+                <br>
+                <a href="/delete/{{task.id}}" button type="button" class="btn btn-danger">Delete</a>
+                <br>
+                
+                
+            </td>
+            <td>{{task.deadline}}</td>
+            {% else %}
+            <td><a href="/delete/{{task.id}}" button type="button" class="btn btn-danger">Delete</a></td>
+            <td>-</td>
+            {% endif %}
+            <td>{{task.status}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+  
+
+
+    
+
+</div>
+{% endblock %}
